@@ -57,5 +57,4 @@ export const addressSchema = z.object({
 	tel: z.string(),
 	region: z.string(),
 	city: z.string(),
-	zip: z.string().optional(),
 })

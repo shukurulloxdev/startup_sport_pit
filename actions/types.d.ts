@@ -48,7 +48,6 @@ export interface createOrderProps {
 	tel: string
 	region: string
 	city: string
-	zip: string
 	totalPrice: number
 	products: { product: string; soni: number }[]
 }

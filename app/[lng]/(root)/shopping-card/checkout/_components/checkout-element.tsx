@@ -1,8 +1,6 @@
 'use client'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { formatPrice } from '@/lib/utils'
-import { selectBasketSummary } from '@/redux/reducers/basketState'
 import { RootState } from '@/redux/store'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
@@ -14,7 +12,6 @@ function CheckoutElement() {
 	const basketProducts = useSelector(
 		(state: RootState) => state.basket.basketProducts
 	)
-	const { total } = useSelector(selectBasketSummary)
 
 	const stripePromise = loadStripe(
 		process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
@@ -22,7 +19,7 @@ function CheckoutElement() {
 	return (
 		<div className='max-w-6xl mx-auto mt-10 max-md:px-3 max-md:mt-6'>
 			<div className='grid grid-cols-3 max-md:grid-cols-1 gap-2 items-start'>
-				<Card className='md:hidden'>
+				{/* <Card className='md:hidden'>
 					<CardContent className='p-4'>
 						<div className='flex flex-col gap-2'>
 							<div className='flex flex-col'>
@@ -40,14 +37,14 @@ function CheckoutElement() {
 							</div>
 						</div>
 					</CardContent>
-				</Card>
+				</Card> */}
 				<Card className='col-span-2 max-md:col-span-1'>
 					<CardContent className='p-4'>
 						<h1 className='font-space-grotesk text-2xl font-bold'>
-							To`lovni amalga oshirish
+							Malumotlarni kiriting
 						</h1>
 						<p className='text-muted-foreground text-sm'>
-							To`lovni amalga oshirish uchun cartani kiritib to`lashni bosing!
+							Buyurtma berish uchun malumotlaringizni kiriting
 						</p>
 						<Elements stripe={stripePromise}>
 							<CheckoutForm />
@@ -89,7 +86,7 @@ function CheckoutElement() {
 							</div>
 						</CardContent>
 					</Card>
-					<div className='max-md:hidden'>
+					{/* <div className='max-md:hidden'>
 						<Card>
 							<CardContent className='p-4'>
 								<div className='flex flex-col gap-2'>
@@ -109,7 +106,7 @@ function CheckoutElement() {
 								</div>
 							</CardContent>
 						</Card>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

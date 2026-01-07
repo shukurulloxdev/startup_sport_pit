@@ -7,7 +7,7 @@ async function Page() {
 	console.log(orders)
 	return (
 		<div className='p-4'>
-			<h1 className='text-2xl font-bold'>All Orders</h1>
+			<h1 className='text-2xl font-bold'>Barcha buyurtmalar</h1>
 			<div className='mt-4'>
 				<Tabs defaultValue='newOrders' className='w-full'>
 					<TabsList className='w-full flex justify-start border-b gap-4 bg-transparent p-0'>
@@ -15,13 +15,13 @@ async function Page() {
 							value='newOrders'
 							className='relative rounded-md border-b-2 border-transparent px-4 py-2 text-sm font-medium text-gray-600 data-[state=active]:border-blue-500 data-[state=active]:text-black'
 						>
-							New orders
+							Yangi buyurtmalar
 						</TabsTrigger>
 						<TabsTrigger
 							value='completedOrders'
 							className='relative rounded-md border-b-2 border-transparent px-4 py-2 text-sm font-medium text-gray-600 data-[state=active]:border-blue-500 data-[state=active]:text-black'
 						>
-							Completed Orders
+							Yakunlangan buyurtmalar
 						</TabsTrigger>
 					</TabsList>
 					<TabsContent value='newOrders'>

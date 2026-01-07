@@ -7,7 +7,6 @@ const orderSchema = new Schema(
 		tel: String,
 		region: String,
 		city: String,
-		zip: String,
 		totalPrice: Number,
 		sent: { type: Boolean, default: false },
 		products: [

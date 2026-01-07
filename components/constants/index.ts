@@ -8,10 +8,8 @@ import {
 	Headphones,
 	Home,
 	LayoutDashboard,
-	MessageSquareMore,
 	MonitorPlay,
 	Package,
-	Settings2,
 	ShieldCheck,
 	TableOfContents,
 	Truck,
@@ -116,35 +114,35 @@ export const mapData: Record<string, string> = {
 
 export const instructorNavLinks = [
 	{
-		label: 'Dashboard',
+		label: 'Statistika',
 		route: '/admin',
 		icon: GaugeCircle,
 	},
 	{
-		label: 'Orders',
+		label: 'Buyurtmalar',
 		route: '/admin/orders',
 		icon: BaggageClaim,
 	},
 	{
-		label: 'My Products',
+		label: 'Mahsulotlar',
 		route: '/admin/my-products',
 		icon: MonitorPlay,
 	},
 	{
-		label: 'Create Product',
+		label: 'Mahsulot kiritish',
 		route: '/admin/create-product',
 		icon: FileCode,
 	},
-	{
-		label: 'Reviews',
-		route: '/admin/reviews',
-		icon: MessageSquareMore,
-	},
-	{
-		label: 'Settings',
-		route: '/admin/settings',
-		icon: Settings2,
-	},
+	// {
+	// 	label: 'Reviews',
+	// 	route: '/admin/reviews',
+	// 	icon: MessageSquareMore,
+	// },
+	// {
+	// 	label: 'Settings',
+	// 	route: '/admin/settings',
+	// 	icon: Settings2,
+	// },
 ]
 
 export const chooseCategory = [

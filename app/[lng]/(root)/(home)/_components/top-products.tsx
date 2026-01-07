@@ -8,7 +8,7 @@ interface Props {
 }
 const TopProducts = ({ topProducts }: Props) => {
 	return (
-		<div className='max-w-6xl  mx-auto mt-14 max-md:mt-12 max-md:px-3'>
+		<div className='max-w-6xl mx-auto mt-14 max-md:mt-12 max-md:px-3'>
 			<div className='flex items-center justify-between'>
 				<h1 className='text-2xl font-bold text-gray-900 self-start'>
 					Top mahsulotlar

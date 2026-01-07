@@ -12,7 +12,9 @@ export async function createOrder(clerkId: string, info: createOrderProps) {
 		await connectToDatabase()
 		const user = await User.findOne({ clerkId })
 		await Order.create({ user: user._id, ...info })
-	} catch {}
+	} catch (err) {
+		console.log(err)
+	}
 }
 
 export async function getOrders() {

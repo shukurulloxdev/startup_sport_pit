@@ -63,7 +63,7 @@ export default function UserProducts({ result }: Props) {
 	return (
 		<div className='p-6 h-full'>
 			<div className='flex items-center justify-between mb-6'>
-				<h1 className='text-2xl font-bold'>My Products</h1>
+				<h1 className='text-2xl font-bold'>Saytdagi barcha mahsulotlar</h1>
 				<div className='flex items-center gap-3'>
 					<Select onValueChange={filterProducts}>
 						<SelectTrigger className='w-[560px]  font-space-grotesk tracking-widest'>

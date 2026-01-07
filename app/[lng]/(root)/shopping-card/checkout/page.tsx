@@ -4,10 +4,7 @@ import CheckoutElement from './_components/checkout-element'
 function Page() {
 	return (
 		<div>
-			<TopBar
-				label={'To`lov '}
-				extra={'Savatingizdagi mahsulotlarni sotib olish'}
-			/>
+			<TopBar label={'To`lov '} extra={'Buyurtma qilish'} />
 			<CheckoutElement />
 		</div>
 	)

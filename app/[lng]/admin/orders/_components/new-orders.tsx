@@ -13,6 +13,7 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 } from '@/components/ui/alert-dialog'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
@@ -48,6 +49,23 @@ function NewOrders({ orders }: Props) {
 
 	return (
 		<>
+			{newOrders.length === 0 && (
+				<div className='flex flex-col items-center justify-center min-h-[60vh] text-center'>
+					<Image
+						src='/notpro.png'
+						alt='Empty cart'
+						width={200}
+						height={200}
+						className='mb-6'
+					/>
+					<h2 className='text-2xl font-semibold mb-2'>
+						Hozircha buyurtma topilmadi
+					</h2>
+					<p className='text-gray-500 max-w-md mb-6'>
+						Mijozlar buyurtma berishi bilan biz shu yerga joylaymiz
+					</p>
+				</div>
+			)}
 			<div className='grid gap-6'>
 				{newOrders.map(order => (
 					<OrderCard

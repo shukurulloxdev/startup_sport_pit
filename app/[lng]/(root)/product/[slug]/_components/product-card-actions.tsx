@@ -1,7 +1,7 @@
 'use client'
 import { IProduct } from '@/app.types'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import {
 	Drawer,
 	DrawerClose,
@@ -11,20 +11,11 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 } from '@/components/ui/drawer'
-import { Separator } from '@/components/ui/separator'
 import { formatPrice } from '@/lib/utils'
 import { addToCard, removeCard } from '@/redux/reducers/basketState'
 import { toggleFavorite } from '@/redux/reducers/favoriteState'
 import { RootState } from '@/redux/store'
-import {
-	Check,
-	CircleAlert,
-	Handbag,
-	Heart,
-	ShoppingBasket,
-	ShoppingCart,
-} from 'lucide-react'
-import Image from 'next/image'
+import { Check, CircleAlert, Handbag, Heart, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -81,7 +72,7 @@ function ProductCardActions(product: IProduct) {
 						<div className='flex flex-col gap-6'>
 							<div className='grid grid-cols-4  gap-2'>
 								<Button
-									className='max-md:col-span-3 col-span-2 font-space-grotesk text-md bg-gray-200 '
+									className='max-md:col-span-3 col-span-2 font-space-grotesk text-md bg-blue-300 hover:bg-blue-400'
 									variant={'outline'}
 									onClick={() => dispatch(addToCard(product))}
 								>
@@ -131,16 +122,6 @@ function ProductCardActions(product: IProduct) {
 									</Button>
 									<h1>19 dona xarid qilish mumkin</h1>
 								</div>
-								<div className='flex items-center gap-2'>
-									<Button
-										variant={'outline'}
-										size={'icon'}
-										className='bg-amber-100'
-									>
-										<ShoppingBasket />
-									</Button>
-									<h1>Bu haftada 17 kishi sotib oldi</h1>
-								</div>
 							</div>
 						</div>
 					</CardContent>
@@ -159,58 +140,6 @@ function ProductCardActions(product: IProduct) {
 					</CardContent>
 				</Card>
 				{/*  */}
-				<Card>
-					<CardHeader className='pb-2'>
-						<CardTitle className='text-lg font-semibold text-gray-900'>
-							Qulay usulda xavfsiz to‘lov
-						</CardTitle>
-						<p className='text-sm text-gray-500'>
-							Karta orqali, naqd pulda yoki bo‘lib to‘lang
-						</p>
-					</CardHeader>
-
-					<CardContent className='flex flex-wrap items-center gap-3'>
-						{/* To'lov ikonkalari */}
-						<div className='flex items-center gap-2'>
-							<Image
-								src='/cards/Mastercard.png'
-								alt='UBank'
-								width={40}
-								height={40}
-							/>
-							<Image
-								src='/cards/uzcard.png'
-								alt='Nasiya'
-								width={40}
-								height={40}
-							/>
-
-							<Image
-								src='/cards/visa.png'
-								alt='Uzcard'
-								width={40}
-								height={40}
-							/>
-							<Image src='/cards/humo.webp' alt='Uzum' width={40} height={40} />
-						</div>
-
-						{/* Chiziq */}
-						<Separator />
-
-						<div>
-							<h3 className='text-base font-semibold text-gray-900'>
-								Qaytarish oson va tez
-							</h3>
-							<p className='text-sm text-gray-500'>
-								Tovarlarni 10 kun ichida qabul qilamiz va darhol pulini
-								qaytaramiz.{' '}
-								<span className='text-blue-600 cursor-pointer hover:underline'>
-									Batafsil
-								</span>
-							</p>
-						</div>
-					</CardContent>
-				</Card>
 			</div>
 			{/*  */}
 			<div

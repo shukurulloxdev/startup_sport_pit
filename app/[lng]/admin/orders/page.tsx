@@ -2,6 +2,8 @@ import { getOrders } from '@/actions/order-action'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import CompletedOrders from './_components/completed-orders'
 import NewOrders from './_components/new-orders'
+export const dynamic = 'force-dynamic'
+
 async function Page() {
 	const orders = await getOrders()
 	console.log(orders)

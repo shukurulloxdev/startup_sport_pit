@@ -12,6 +12,7 @@ export async function createOrder(clerkId: string, info: createOrderProps) {
 		await connectToDatabase()
 		const user = await User.findOne({ clerkId })
 		await Order.create({ user: user._id, ...info })
+		revalidatePath('/admin/orders')
 	} catch (err) {
 		console.log(err)
 	}

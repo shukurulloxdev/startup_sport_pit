@@ -44,10 +44,20 @@ function CreateForm() {
 	const dispatch = useDispatch()
 	const { userId } = useAuth()
 	const images = useSelector((state: RootState) => state.images.images)
+	const defaultValues: z.infer<typeof createProductSchema> = {
+		name: '',
+		category: '',
+		description: '',
+		brand: '',
+		price: '',
+		top: false,
+		discount: false,
+		percent: '',
+	}
 
 	const form = useForm<z.infer<typeof createProductSchema>>({
 		resolver: zodResolver(createProductSchema),
-		defaultValues: {},
+		defaultValues,
 	})
 	console.log(userId!)
 
@@ -67,12 +77,12 @@ function CreateForm() {
 			images,
 		})
 		result.then(() => {
-			clearImages()
-			form.reset()
+			dispatch(clearImages())
+			form.reset(defaultValues)
 		})
 		toast.promise(result, {
 			loading: 'Loading...',
-			success: 'Successfully loaded ✅',
+			success: 'Mahsulot qo`shildi ✅',
 			error: 'Unfortunately, the product could not be loaded.',
 		})
 	}
